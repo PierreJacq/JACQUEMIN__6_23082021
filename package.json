@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/PierreJacq/JACQUEMIN__6_23082021/issues"
   },
-  "homepage": "https://github.com/PierreJacq/JACQUEMIN__6_23082021#readme"
+  "homepage": "https://github.com/PierreJacq/JACQUEMIN__6_23082021#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.5",
+    "mongoose-unique-validator": "^2.0.3"
+  }
 }
