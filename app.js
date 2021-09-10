@@ -4,12 +4,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const dotenv = require('dotenv').config();
 
 
 //--------------------------------------------------------------
 //-------------- DATABASE
 //--------------------------------------------------------------
-mongoose.connect('mongodb+srv://administrateurprojet:jesuisunmotdepassesimple@cluster0.brbcu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
+mongoose.connect(process.env.DB_MONGO_ATLAS, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
@@ -37,6 +38,9 @@ app.use(bodyParser.json());
 const userRoutes = require ('./routes/user')
 app.use('/api/auth', userRoutes)
 
+//routes sauces
+const saucesRoutes = require ('./routes/sauce')
+app.use('/api/sauce', saucesRoutes)
 
 
 
