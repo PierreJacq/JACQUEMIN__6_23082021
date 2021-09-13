@@ -31,19 +31,19 @@ const saucesSchema = mongoose.Schema({
     },
     likes:{
         type: Number,
-        required : true
+        default : 0
     },
     dislikes:{
         type: Number,
-        required : true
+        default : 0
     },
     usersLiked:{
         type: Array, 
-        required : true
+        default: []    
     },
     usersDisliked:{
         type: Array,
-        required : true
+        default: []    
     },
 })
 

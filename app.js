@@ -34,14 +34,16 @@ app.use((req, res, next) => {
 //--------------------------------------------------------------
 app.use(bodyParser.json());
 
-// Routes utilisateurs
+// Route users
 const userRoutes = require ('./routes/user')
 app.use('/api/auth', userRoutes)
 
-//routes sauces
+// Route sauce
 const saucesRoutes = require ('./routes/sauce')
 app.use('/api/sauce', saucesRoutes)
 
-
+// Route images
+const path = require('path');
+app.use('images', express.static(path.join(__dirname, 'images')));
 
 module.exports = app;
