@@ -21,6 +21,7 @@ mongoose.connect(process.env.DB_MONGO_ATLAS, {
 //--------------  HEADERS
 //--------------------------------------------------------------
 const app = express();
+app.use(bodyParser.json());
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -32,7 +33,7 @@ app.use((req, res, next) => {
 //--------------------------------------------------------------
 //-------------- ROUTES
 //--------------------------------------------------------------
-app.use(bodyParser.json());
+
 
 // Route users
 const userRoutes = require ('./routes/user')
@@ -40,7 +41,7 @@ app.use('/api/auth', userRoutes)
 
 // Route sauce
 const saucesRoutes = require ('./routes/sauce')
-app.use('/api/sauce', saucesRoutes)
+app.use('/api/sauces', saucesRoutes)
 
 // Route images
 const path = require('path');
