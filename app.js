@@ -34,6 +34,9 @@ app.use((req, res, next) => {
 //-------------- ROUTES
 //--------------------------------------------------------------
 
+// Route images
+const path = require('path');
+app.use('/images', express.static(path.join(__dirname, 'images')));
 
 // Route users
 const userRoutes = require ('./routes/user')
@@ -43,8 +46,5 @@ app.use('/api/auth', userRoutes)
 const saucesRoutes = require ('./routes/sauce')
 app.use('/api/sauces', saucesRoutes)
 
-// Route images
-const path = require('path');
-app.use('images', express.static(path.join(__dirname, 'images')));
 
 module.exports = app;

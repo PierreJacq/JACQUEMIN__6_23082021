@@ -21,14 +21,14 @@ const saucesSchema = mongoose.Schema({
         type: String,
         required : true
     },
-    imageURL:{
+    imageUrl:{
         type: String,
         required : true
     },
     heat:{
         type: Number,
         required : true
-    },
+    }, 
     likes:{
         type: Number,
         default : 0
